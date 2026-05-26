@@ -1,4 +1,9 @@
-const INVERTED_INDICES = new Set([3]) // stelling 4 is index 3
+export const INVERTED_INDICES = new Set([3]) // stelling 4 (index 3) is inverted
+export function isInverted(index: number): boolean {
+  return INVERTED_INDICES.has(index)
+}
+
+export const MAX_SCORE = 18 // 6 questions × 3 max points
 
 export function invertScore(score: number): number {
   return 3 - score
@@ -6,13 +11,13 @@ export function invertScore(score: number): number {
 
 export function calculateScore(answers: number[]): number {
   return answers.reduce((total, answer, index) => {
-    const score = INVERTED_INDICES.has(index) ? invertScore(answer) : answer
+    const score = isInverted(index) ? invertScore(answer) : answer
     return total + score
   }, 0)
 }
 
 export function calculatePercentage(score: number): number {
-  return Math.round((score / 18) * 100)
+  return Math.min(100, Math.max(0, Math.round((score / MAX_SCORE) * 100)))
 }
 
 export function getInterpretation(percentage: number): string {

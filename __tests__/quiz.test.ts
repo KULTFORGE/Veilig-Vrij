@@ -1,4 +1,5 @@
 import {
+  isInverted,
   invertScore,
   calculateScore,
   calculatePercentage,
@@ -85,4 +86,15 @@ describe('getSliderEcho', () => {
     expect(getSliderEcho(70)).toContain('vrijheid')
     expect(getSliderEcho(100)).toContain('vrijheid')
   })
+})
+
+describe('isInverted', () => {
+  it('returns true for index 3', () => expect(isInverted(3)).toBe(true))
+  it('returns false for index 0', () => expect(isInverted(0)).toBe(false))
+  it('returns false for index 5', () => expect(isInverted(5)).toBe(false))
+})
+
+describe('calculatePercentage clamping', () => {
+  it('clamps to 100 for score above max', () => expect(calculatePercentage(20)).toBe(100))
+  it('clamps to 0 for negative score', () => expect(calculatePercentage(-1)).toBe(0))
 })
