@@ -1,6 +1,8 @@
 'use client'
+import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { Menu, X } from 'lucide-react'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -12,6 +14,7 @@ const links = [
 
 export default function Header() {
   const pathname = usePathname()
+  const [mobileOpen, setMobileOpen] = useState(false)
   return (
     <header
       style={{ background: 'var(--bg)', borderBottom: '1px solid var(--border)' }}
@@ -32,7 +35,7 @@ export default function Header() {
                 key={href}
                 href={href}
                 style={{
-                  color: isMuted ? 'var(--text-muted)' : active ? 'var(--primary)' : 'var(--text)',
+                  color: active ? 'var(--primary)' : isMuted ? 'var(--text-muted)' : 'var(--text)',
                   fontWeight: active ? 600 : 400,
                   fontSize: '0.9375rem',
                   transition: 'color .15s',
@@ -57,7 +60,46 @@ export default function Header() {
         >
           Doe mee
         </Link>
+
+        {/* Mobile hamburger — visible on small screens only */}
+        <button
+          className="md:hidden ml-auto"
+          onClick={() => setMobileOpen(o => !o)}
+          style={{ color: 'var(--text)', background: 'none', border: 'none', cursor: 'pointer', padding: '4px' }}
+          aria-label={mobileOpen ? 'Sluit menu' : 'Open menu'}
+        >
+          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
+
+      {mobileOpen && (
+        <div
+          style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)', padding: '12px 24px' }}
+          className="md:hidden flex flex-col gap-4"
+        >
+          {links.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setMobileOpen(false)}
+              style={{
+                color: pathname === href ? 'var(--primary)' : 'var(--text)',
+                fontWeight: pathname === href ? 600 : 400,
+                fontSize: '1rem',
+              }}
+            >
+              {label}
+            </Link>
+          ))}
+          <Link
+            href="/quiz"
+            onClick={() => setMobileOpen(false)}
+            style={{ background: 'var(--accent)', color: '#fff', fontWeight: 600, padding: '10px 20px', borderRadius: '999px', textAlign: 'center', fontSize: '0.9375rem' }}
+          >
+            Doe mee
+          </Link>
+        </div>
+      )}
     </header>
   )
 }

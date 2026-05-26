@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -34,16 +35,23 @@ export default function Footer() {
         <div>
           <p style={{ fontWeight: 700, marginBottom: '12px', fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '.05em', color: 'var(--text-muted)' }}>Blijf op de hoogte</p>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9375rem', marginBottom: '12px' }}>Ontvang updates over onze standpunten en campagne.</p>
-          <div className="flex gap-2">
+          <form
+            onSubmit={e => { e.preventDefault() }}
+            className="flex gap-2"
+          >
             <input
               type="email"
               placeholder="jouw@email.nl"
+              aria-label="E-mailadres voor nieuwsbrief"
               style={{ flex: 1, padding: '8px 12px', borderRadius: '8px', border: '1.5px solid var(--border)', background: 'var(--bg)', color: 'var(--text)', fontSize: '0.875rem' }}
             />
-            <button style={{ background: 'var(--primary)', color: '#fff', fontWeight: 600, fontSize: '0.875rem', padding: '8px 14px', borderRadius: '8px' }}>
+            <button
+              type="submit"
+              style={{ background: 'var(--primary)', color: '#fff', fontWeight: 600, fontSize: '0.875rem', padding: '8px 14px', borderRadius: '8px' }}
+            >
               Meld aan
             </button>
-          </div>
+          </form>
         </div>
       </div>
       <div style={{ borderTop: '1px solid var(--border)', textAlign: 'center', padding: '16px', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
