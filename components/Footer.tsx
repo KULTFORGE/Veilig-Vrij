@@ -37,13 +37,13 @@ export default function Footer() {
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9375rem', marginBottom: '12px' }}>Ontvang updates over onze standpunten en campagne.</p>
           <form
             onSubmit={e => { e.preventDefault() }}
-            className="flex gap-2"
+            className="flex gap-2 flex-wrap"
           >
             <input
               type="email"
               placeholder="jouw@email.nl"
               aria-label="E-mailadres voor nieuwsbrief"
-              style={{ flex: 1, padding: '8px 12px', borderRadius: '8px', border: '1.5px solid var(--border)', background: 'var(--bg)', color: 'var(--text)', fontSize: '0.875rem' }}
+              style={{ flex: 1, minWidth: 0, padding: '8px 12px', borderRadius: '8px', border: '1.5px solid var(--border)', background: 'var(--bg)', color: 'var(--text)', fontSize: '0.875rem' }}
             />
             <button
               type="submit"

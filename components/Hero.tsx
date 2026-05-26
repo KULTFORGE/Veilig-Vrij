@@ -36,7 +36,7 @@ export default function Hero() {
 
         <div className="flex justify-center md:justify-end">
           {/* Logo placeholder — replace with <Image> if /public/logo.jpeg is added */}
-          <div style={{ width: 320, height: 320, borderRadius: '1.5rem', background: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ width: 320, height: 320, maxWidth: '100%', borderRadius: '1.5rem', background: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <span style={{ color: '#fff', fontWeight: 800, fontSize: '1.25rem', textAlign: 'center', padding: '1rem' }}>Veilig & Vrij</span>
           </div>
         </div>
