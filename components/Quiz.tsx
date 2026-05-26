@@ -133,7 +133,7 @@ export default function Quiz() {
   }
 
   if (state === 'question') {
-    const progress = ((questionIndex + 1) / stellingen.length) * 100
+    const progress = (questionIndex / stellingen.length) * 100
     return (
       <div style={{ maxWidth: '560px', margin: '0 auto', padding: '4rem 1rem' }}>
         <div style={{ height: '6px', background: 'var(--border)', borderRadius: '999px', marginBottom: '2rem', overflow: 'hidden' }}>

@@ -77,11 +77,12 @@ export default function Header() {
           style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)', padding: '12px 24px' }}
           className="md:hidden flex flex-col gap-4"
         >
-          {links.map(({ href, label }) => (
+          {links.map(({ href, label, badge }) => (
             <Link
               key={href}
               href={href}
               onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-1.5"
               style={{
                 color: pathname === href ? 'var(--primary)' : 'var(--text)',
                 fontWeight: pathname === href ? 600 : 400,
@@ -89,6 +90,11 @@ export default function Header() {
               }}
             >
               {label}
+              {badge && (
+                <span style={{ background: 'var(--secondary)', color: '#fff', fontSize: '9px', fontWeight: 700, padding: '2px 5px', borderRadius: '99px', letterSpacing: '.04em', textTransform: 'uppercase' }}>
+                  {badge}
+                </span>
+              )}
             </Link>
           ))}
           <Link

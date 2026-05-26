@@ -21,9 +21,9 @@ export function calculatePercentage(score: number): number {
 }
 
 export function getInterpretation(percentage: number): string {
-  if (percentage >= 80) return "Je en V&V zitten op één lijn. Welkom in de club."
+  if (percentage >= 80) return "Jij en V&V zitten op één lijn. Welkom in de club."
   if (percentage >= 60) return "Op de meeste punten zijn we het eens. Lees vooral verder."
-  if (percentage >= 40) return "Op sommige vlakken denken we hetzelfde. Misschien verandert dat als je onze standpunten leest."
+  if (percentage >= 40) return "Op sommige vlakken denken we hetzelfde. Misschien verandert dat als jij onze standpunten leest."
   return "Onze visies verschillen — maar lees gerust verder. Misschien valt er meer overlap dan je denkt."
 }
 
