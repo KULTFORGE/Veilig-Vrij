@@ -4,7 +4,6 @@ import './globals.css'
 
 const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['400', '600', '800'],
   variable: '--font-manrope',
   display: 'swap',
 })
@@ -20,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="nl">
-      <body className={manrope.variable}>
+    <html lang="nl" className={manrope.variable}>
+      <body>
         {children}
       </body>
     </html>
