@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -22,7 +23,7 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center gap-8">
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'var(--primary)' }} />
+          <Image src="/logo.jpeg" alt="Veilig & Vrij" width={36} height={36} className="rounded-full object-cover" />
           <span style={{ color: 'var(--text)', fontWeight: 800, fontSize: '1rem' }}>Veilig & Vrij</span>
         </Link>
 

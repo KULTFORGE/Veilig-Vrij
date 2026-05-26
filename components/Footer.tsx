@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'var(--primary)' }} />
+            <Image src="/logo.jpeg" alt="Veilig & Vrij" width={32} height={32} className="rounded-full object-cover" />
             <span style={{ fontWeight: 800 }}>Veilig & Vrij</span>
           </div>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9375rem', lineHeight: 1.6 }}>

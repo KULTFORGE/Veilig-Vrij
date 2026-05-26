@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
@@ -36,9 +37,7 @@ export default function Hero() {
 
         <div className="flex justify-center md:justify-end">
           {/* Logo placeholder — replace with <Image> if /public/logo.jpeg is added */}
-          <div style={{ width: 320, height: 320, maxWidth: '100%', borderRadius: '1.5rem', background: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <span style={{ color: '#fff', fontWeight: 800, fontSize: '1.25rem', textAlign: 'center', padding: '1rem' }}>Veilig & Vrij</span>
-          </div>
+          <Image src="/logo.jpeg" alt="Veilig & Vrij" width={360} height={360} className="rounded-3xl object-cover" style={{ maxWidth: '100%', height: 'auto' }} priority />
         </div>
       </div>
     </section>
