@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 
-const links = [
+const links: { href: string; label: string; badge?: string }[] = [
   { href: '/', label: 'Home' },
   { href: '/standpunten', label: 'Standpunten' },
   { href: '/over-ons', label: 'Over ons' },
