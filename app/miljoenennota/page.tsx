@@ -95,14 +95,14 @@ export default function MiljoenennotaPage() {
         </div>
       </section>
 
-      <section style={{ background: 'var(--bg)' }} className="py-16">
-        <div className="max-w-4xl mx-auto px-6">
+      <section style={{ background: 'var(--bg)' }} className="py-10">
+        <div className="max-w-6xl mx-auto px-4">
           <Image
             src="/Miljoenennota 2026.png"
             alt="Miljoenennota 2026 overzicht"
-            width={900}
-            height={1200}
-            style={{ width: '100%', height: 'auto', borderRadius: '12px', border: '1px solid var(--border)' }}
+            width={1454}
+            height={1025}
+            style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
             priority
           />
         </div>
