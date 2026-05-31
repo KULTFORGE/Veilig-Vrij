@@ -10,7 +10,7 @@ const links = [
   { href: '/standpunten', label: 'Standpunten' },
   { href: '/over-ons', label: 'Over ons' },
   { href: '/quiz', label: 'Quiz' },
-  { href: '/miljoenennota', label: 'Miljoenennota', badge: 'snel' },
+  { href: '/miljoenennota', label: 'Miljoenennota' },
 ]
 
 export default function Header() {
